@@ -1,0 +1,14 @@
+Raport de testare
+
+Probleme/bug-uri intalnite si modul lor de rezolvare
+
+	1. Problema: Instalarea OpenCV
+		Initial am instalat utilizand instructiunile de pe git ale OpenCV( https://github.com/opencv/opencv_contrib ), da g++ nu recunostea  biblioteca. Apoi am folosit CMake impreuna cu 2 tutoriale si a functionat(https://towardsdatascience.com/how-to-install-opencv-and-extra-modules-from-source-using-cmake-and-then-set-it-up-in-your-pycharm-7e6ae25dbac5
+
+	https://cv-tricks.com/installation/opencv-4-1-ubuntu18-04/ 
+). 
+	2. Problema: Utiizare OpenCV
+		Sunt schimbari majore de la o versiune a alteia de OpenCV si nu am realizat asta cand am folosit o constanta din versiunea 2, eu folosind in programul meu si module de versiune 3.
+	4. Bug:
+		Cand folosesc bitwise_and ca in filtrul de cartoon trebuia sa folosesc imaginea color originala img_rgb
+	

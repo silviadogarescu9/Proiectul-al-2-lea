@@ -1,0 +1,29 @@
+C++ allows for arbitrary length identifier names, so there's no reason to be terse when naming variables. Use descriptive names, and be consistent in the style.
+Common C++ Naming Conventions
+Types start with capitals: MyClass
+functions and variables start with lower case: myMethod
+constants are all capital: const int PI=3.14159265358979323;
+Note that the C++ standard does not follow any of these guidelines. Everything in the standard is lowercase only.
+Distinguish C++ Files From C Files
+C++ source file should be named .cpp or .cc NOT .c C++ header files should be named .hpp NOT .h
+Use nullptr
+C++11 introduces nullptr which is a special type denoting a null pointer value. This should be used instead of 0 or NULL to indicate a null pointer.
+Comments
+Comment blocks should use //, not /* */. Using // makes it much easier to comment out a block of code while debugging.
+Never Use using In a Header File
+This causes the name space you are using to be pulled into the namespace of the header file.
+Include Guards
+Header files must contain an distinctly named include guard to avoid problems with including the same header multiple times or conflicting with other headers from other projects
+{} are required for blocks.
+Leaving them off can lead to semantic errors in the code.
+Always Use Namespaces
+There is almost never a reason to declare an identifier in the global namespaces. Instead, functions and classes should exist in an appropriately named namespaces or in a class inside of a namespace. Identifiers which are placed in the global namespace risk conflicting with identifiers from other (mostly C, which doesn't have namespaces) libraries.
+Avoid Compiler Macros
+Compiler definitions and macros are replaced by the pre-processor before the compiler is ever run. This can make debugging very difficult because the debugger doesn't know where the source came from.
+Avoid global data
+Global data leads to unintended sideeffects between functions and can make code difficult or impossible to parallelize. Even if the code is not intended today for parallelization, there is no reason to make it impossible for the future.
+Const as much as possible
+const tells the compiler that a variable or method is immutable. This helps the compiler optimize the code and helps the developer know if a function side effects. Also, using const & prevents the compiler from copying data unnecessarily. Here are some comments on const from John Carmack.
+Prefer Stack Operations to Heap Operations
+Heap operations have performance penalties in mulithreaded environments on most platforms and can possibly lead to memory errors if not used carefully.
+Modern C++11 has special move operations which are designed to enhances the performance of stack based data by reducing or eliminating copies, which can bring even the single threaded case on par with heap based operations.
